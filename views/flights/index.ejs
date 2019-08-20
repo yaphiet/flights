@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+ 
+  <h1>Flights</h1>
+    <table id="list">
+        <thead>
+          <tr>
+            <th>Airline</th>
+            <th>Flight Number</th>
+            <th>Depart Time</th>
+            <th>Airport</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% flights.forEach(function(f) { %>
+            <tr>
+              <td><%= f.airline %></td>
+              <td><%= f.flightNo %></td>
+              <td><%= f.departs %></td>
+              <td><%= f.airport %></td>
+              <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        <a href="/flights/new">Add New Flight</a>
+
+<%- include('../partials/footer') %>
